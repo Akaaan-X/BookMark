@@ -1,6 +1,7 @@
 import express from "express";
 import {
   createProduct,
+  createProductReview,
   deleteProduct,
   getProductById,
   getProducts,
@@ -12,6 +13,8 @@ const router = express.Router();
 
 // getProducts
 router.route("/").get(getProducts).post(protect, admin, createProduct);
+
+router.route("/:id/reviews").post(protect, createProductReview);
 
 // getProductById
 router
