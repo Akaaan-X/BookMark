@@ -15,6 +15,7 @@ import {
   productCreateReducer,
   productUpdateReducer,
   productReviewCreateReducer,
+  productTopRatedReducer,
 } from "./reducers/productReducers.js";
 import {
   userDetailsReducer,
@@ -32,6 +33,7 @@ const reducer = {
   productCreate: productCreateReducer,
   productUpdate: productUpdateReducer,
   productReviewCreate: productReviewCreateReducer,
+  productTopRated: productTopRatedReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,

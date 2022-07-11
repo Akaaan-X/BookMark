@@ -7,6 +7,7 @@ import { Row, Col } from "react-bootstrap";
 import { listProducts } from "../actions/productActions";
 import { useParams } from "react-router-dom";
 import { Paginate } from "../components/Paginate";
+import { ProductCarousel } from "../components/ProductCarousel";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function HomeScreen() {
 
   return (
     <div className='homeScreen'>
+      {!keyword && <ProductCarousel />}
       <h1>Latest Books</h1>
       {loading ? (
         <Loader />
