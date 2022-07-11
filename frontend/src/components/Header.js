@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userAction";
+import { SearchBox } from "./SearchBox";
 
 export default function Header() {
   const userLogin = useSelector((state) => state.userLogin);
@@ -44,6 +45,7 @@ export default function Header() {
               </Nav.Link>
             </Nav>
             <Nav className='navLink ms-auto'>
+              <SearchBox />
               <Nav.Link as={Link} to='/cart'>
                 <i className='fas fa-shopping-cart'></i>
                 Cart
