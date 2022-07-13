@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { Meta } from "../components/Meta";
 import {
   Row,
   Col,
@@ -84,6 +85,7 @@ export default function ProductScreen() {
         <Message variant='danger'>{error}</Message>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row className='productDetail'>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid />

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import { Link } from "react-router-dom";
+import { Meta } from "../components/Meta";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col } from "react-bootstrap";
 import { listProducts } from "../actions/productActions";
@@ -25,7 +27,14 @@ export default function HomeScreen() {
 
   return (
     <div className='homeScreen'>
-      {!keyword && <ProductCarousel />}
+      <Meta />
+      {!keyword ? (
+        <ProductCarousel />
+      ) : (
+        <Link className='btn btn-light' type='button' to='/'>
+          Go back
+        </Link>
+      )}
       <h1>Latest Books</h1>
       {loading ? (
         <Loader />
